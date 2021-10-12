@@ -14,4 +14,22 @@ module.exports = {
         },
         historyApiFallback: true,
     },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    'raw-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                exclude: /node_modules/,
+                            }
+                        },
+                    },
+                ],
+            },
+        ]
+    }
 };
